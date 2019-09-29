@@ -16,6 +16,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 //   res.send('Got a POST request')
 // })
 
+// document.getElementById
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
