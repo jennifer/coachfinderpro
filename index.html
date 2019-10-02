@@ -9,10 +9,10 @@
 </head>
 <body>
   <h1>Coachfinder Pro</h1>
-  <form action="#" class="search-form">
-    <label for="query">Search:</label>
-    <input type="text" class="js-query">
-    <button type="submit">Search</button>
+  <form class="search-form">
+    <label for="searchinput">Search:</label>
+    <input type="text" name="searchinput" id='searchinput'/>
+    <button type="submit" onclick="getDataFromApi()">Search</button>
   </form>
   <ul id="results"></ul>
   <script type='text/javascript' src='app.js'></script>

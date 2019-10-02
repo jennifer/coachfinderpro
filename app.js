@@ -1,26 +1,21 @@
-// let searchInput = document.getElementById("searchInput").value;
-// console.log(searchInput);
-
-// function getDataFromApi(searchInput) {
-//   fetch(`https://coach-finder.herokuapp.com/api/v1/parts/search?q=${searchInput}`, {mode: 'no-cors'})
-//   .then(
-//     function(response) {
-//       if (response.status !== 200) {
-//         console.log('Looks like there was a problem. Status Code: ' + response.status);
-//         return;
-//       }
-//       // Examine the text in the response
-//       response.jsonp().then(function(data) {
-//         console.log(data);
-//       });
-//     }
-//   )
-//   .catch(function(err) {
-//     console.log('Fetch Error :-S', err);
-//   });
-// }
-// getDataFromApi()
-
+function getDataFromApi() {
+  let searchInput = document.getElementById('searchinput').value;
+  fetch(`https://coach-finder.herokuapp.com/api/v1/parts/search?q=${searchInput}`, {mode: 'no-cors'})
+  .then(
+    function(response) {
+      if (response.status !== 200) {
+        console.log('Looks like there was a problem. Status Code: ' + response.status);
+        return;
+      }
+      response.jsonp().then(function(data) {
+        console.log(data);
+      });
+    }
+  )
+  .catch(function(err) {
+    console.log('Fetch Error :-S', err);
+  });
+}
 
 let data=
 [
