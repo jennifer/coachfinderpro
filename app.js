@@ -23,6 +23,7 @@ function getDataFromApi() {
           catalogPage.appendChild(image);
         };
       });
+      document.getElementById('searchinput').value = '';
     }
   )
   .catch(function(err) {
