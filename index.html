@@ -9,11 +9,12 @@
 </head>
 <body>
   <h1>Coachfinder Pro</h1>
-  <form>
-    Search:<br>
-    <input type="text" name="freeSearch" value="Willis">
-    <input type="submit" value="Submit">
-  </form> 
+  <form action="#" class="search-form">
+    <label for="query">Search:</label>
+    <input type="text" class="js-query">
+    <button type="submit">Search</button>
+  </form>
+  <ul id="results"></ul>
   <script type='text/javascript' src='app.js'></script>
 </body>
 </html>
