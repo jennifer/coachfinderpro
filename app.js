@@ -1,13 +1,13 @@
 function getDataFromApi() {
   let searchInput = document.getElementById('searchinput').value;
-  fetch(`https://coach-finder.herokuapp.com/api/v1/parts/search?q=${searchInput}`, {mode: 'no-cors'})
+  fetch(`https://cors-anywhere.herokuapp.com/https://coach-finder.herokuapp.com/api/v1/parts/search?q=${searchInput}`)
   .then(
     function(response) {
       if (response.status !== 200) {
         console.log('Looks like there was a problem. Status Code: ' + response.status);
         return;
       }
-      response.jsonp().then(function(data) {
+      response.json().then(function(data) {
         console.log(data);
       });
     }
