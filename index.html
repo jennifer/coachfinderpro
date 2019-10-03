@@ -6,12 +6,13 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Coachfinder Pro</title>
   <link rel='stylesheet' type='text/css' href='style.css'>
+  <link href="https://fonts.googleapis.com/css?family=EB+Garamond:400,800|Lato:400&display=swap" rel="stylesheet"> 
 </head>
 <body>
-  <h1>Coachfinder Pro</h1>
+  <h1>the COACH finder pro</h1>
   <form class="searchform">
-    <label for="searchinput">Search:</label>
-    <input type="text" name="searchinput" id='searchinput'/>
+    <label class="screen-reader-only" for="searchinput">Search:</label>
+    <input type="text" name="searchinput" id='searchinput' placeholder="Search Product By Name, Color, Or Style"/>
     <button type="submit" onclick="getDataFromApi(event)">Search</button>
   </form>
   <ul id="results"></ul>
