@@ -1,4 +1,4 @@
-function getDataFromApi() {
+function getDataFromApi(event) {
   event.preventDefault();
   let searchInput = document.getElementById('searchinput').value;
   const oldResults = document.getElementById("results");
@@ -19,7 +19,6 @@ function getDataFromApi() {
           const catalogPage = document.createElement('li');
           const nameAndDate = document.createElement('p');
           const image = document.createElement('img');
-          console.log(`${data[index].img_url}`);
           nameAndDate.textContent = `${data[index].catalog_name}` + " " +`${data[index].year}`;
           image.src=`${data[index].img_url}`;
             
