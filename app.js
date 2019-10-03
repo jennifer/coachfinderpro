@@ -1,5 +1,10 @@
 function getDataFromApi() {
+  event.preventDefault();
   let searchInput = document.getElementById('searchinput').value;
+  const oldResults = document.getElementById("results");
+  while (oldResults.firstChild) {
+    oldResults.removeChild(oldResults.firstChild);
+  }
   fetch(`https://coach-finder.herokuapp.com/api/v1/parts/search?q=${searchInput}`)
   .then(
     function(response) {
