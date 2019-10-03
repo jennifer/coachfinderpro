@@ -1,6 +1,6 @@
 function getDataFromApi() {
   let searchInput = document.getElementById('searchinput').value;
-  fetch(`https://cors-anywhere.herokuapp.com/https://coach-finder.herokuapp.com/api/v1/parts/search?q=${searchInput}`)
+  fetch(`https://coach-finder.herokuapp.com/api/v1/parts/search?q=${searchInput}`)
   .then(
     function(response) {
       if (response.status !== 200) {
