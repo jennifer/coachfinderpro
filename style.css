@@ -43,9 +43,6 @@ button {
   -webkit-clip-path: polygon(0px 0px, 0px 0px, 0px 0px);
   overflow: hidden !important;
 }
-.results {
-  display: grid;
-}
 ul {
   padding-left: 24px;
 }
@@ -53,6 +50,28 @@ li, p {
   list-style-type: none;
   font-family: 'Lato', sans-serif;
 }
-img {
-  width: 30%;
+
+
+@media (max-width: 768px) {
+  li {
+    width: 100%;
+  }
+  img {
+    width: 95%;
+  }
+}
+@media (min-width: 768px) {
+  li {
+    display: inline-block;
+    width: 50%;
+  }
+  img {
+    width: 85%;
+  }
+}
+@media (min-width: 960px) {
+  li {
+    display: inline-block;
+    width: 33.3%;
+  }
 }
