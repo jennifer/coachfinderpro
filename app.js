@@ -12,20 +12,8 @@ function getDataFromApi(event) {
         console.log('Looks like there was a problem. Status Code: ' + response.status);
         return;
       }
-      response.json().then(function(data) {
-        data.forEach(renderResults);
-        function renderResults(eachResult, index) {
-          const results = document.getElementById('results');
-          const catalogPage = document.createElement('li');
-          const nameAndDate = document.createElement('p');
-          const image = document.createElement('img');
-          nameAndDate.textContent = `${data[index].catalog_name}` + " " +`${data[index].year}`;
-          image.src=`${data[index].img_url}`;
-            
-          results.appendChild(catalogPage);
-          catalogPage.appendChild(nameAndDate);
-          catalogPage.appendChild(image);
-        };
+      response.json().then(function testFunc(data) {
+        renderResults(data)
       });
       document.getElementById('searchinput').value = '';
     }
@@ -33,4 +21,27 @@ function getDataFromApi(event) {
   .catch(function(err) {
     console.log('Fetch Error :-S', err);
   });
+}
+
+function renderResults(data) {
+  if (data && data.length) {
+    data.forEach(renderEachResult);
+    function renderEachResult(eachResult, index) {
+      const results = document.getElementById('results');
+      const catalogPage = document.createElement('li');
+      const nameAndDate = document.createElement('p');
+      const image = document.createElement('img');
+      nameAndDate.textContent = `${data[index].catalog_name}` + " " +`${data[index].year}`;
+      image.src=`${data[index].img_url}`;
+        
+      results.appendChild(catalogPage);
+      catalogPage.appendChild(nameAndDate);
+      catalogPage.appendChild(image);
+    }
+  }
+  else {
+    const searchAgain = document.createElement('p');
+    searchAgain.textContent = "No results. Try a different search."
+    results.appendChild(searchAgain);
+  }
 }

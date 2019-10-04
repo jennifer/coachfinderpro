@@ -43,10 +43,16 @@ button {
   -webkit-clip-path: polygon(0px 0px, 0px 0px, 0px 0px);
   overflow: hidden !important;
 }
-li {
+.results {
+  display: grid;
+}
+ul {
+  padding-left: 24px;
+}
+li, p {
   list-style-type: none;
   font-family: 'Lato', sans-serif;
 }
 img {
-  width: 600px;
+  width: 30%;
 }
