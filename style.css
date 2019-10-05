@@ -3,7 +3,7 @@ html, body {
   margin: 0;
   padding: 0;
 }
-h1 {
+h1, h2 {
   font-family: 'EB Garamond', serif;
   font-weight: 800;
   margin-left: 20px;
@@ -22,8 +22,7 @@ input {
 button {
   border: 1px black solid;
 }
-input::placeholder,
-button {
+input::placeholder, button {
   font-family: 'EB Garamond', serif;
   font-size: 18px;
   font-weight: 400;
@@ -47,8 +46,7 @@ li, p {
 }
 
 @media (max-width: 768px) {
-  input,
-  button {
+  input, button {
     margin-top: 5px;
   }
   li {

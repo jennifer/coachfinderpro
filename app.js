@@ -12,8 +12,8 @@ function getDataFromApi(event) {
         console.log('Looks like there was a problem. Status Code: ' + response.status);
         return;
       }
-      response.json().then(function testFunc(data) {
-        renderResults(data)
+      response.json().then(function(data) {
+        renderResults(data, searchInput)
       });
       document.getElementById('searchinput').value = '';
     }
@@ -23,8 +23,10 @@ function getDataFromApi(event) {
   });
 }
 
-function renderResults(data) {
+function renderResults(data, searchInput) {
   if (data && data.length) {
+    const resultsInfo = document.getElementById('resultsInfo');
+    resultsInfo.textContent = `${data.length}` + ' results for ' + `${searchInput}` + ':';
     data.forEach(renderEachResult);
     function renderEachResult(eachResult, index) {
       const results = document.getElementById('results');
