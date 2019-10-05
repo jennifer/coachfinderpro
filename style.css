@@ -17,9 +17,9 @@ input {
   height: 34px;
   vertical-align: top;
   border: 1px black solid;
-  padding-top: 4px;
   padding-left: 4px;
   border-radius: 0;
+  -webkit-border-radius: 0;
 }
 button {
   height: 34px;
@@ -32,6 +32,9 @@ input, input::placeholder, button {
   font-size: 18px;
   font-weight: 400;
 }
+input::placeholder {
+  vertical-align: middle;
+}
 ul {
   padding-left: 20px;
 }
@@ -42,8 +45,8 @@ li, p {
 }
 #loadmore {
   visibility: hidden;
-  margin: 20px;
-  margin-left: 45%;
+  display: block;
+  margin: 20px auto;
 }
 .screen-reader-only {
   position: absolute;
