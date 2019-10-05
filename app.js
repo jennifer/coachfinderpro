@@ -5,22 +5,29 @@ function getDataFromApi(event) {
   while (oldResults.firstChild) {
     oldResults.removeChild(oldResults.firstChild);
   }
-  fetch(`https://coach-finder.herokuapp.com/api/v1/parts/search?q=${searchInput}`)
-  .then(
-    function(response) {
-      if (response.status !== 200) {
-        console.log('Looks like there was a problem. Status Code: ' + response.status);
-        return;
+  if (searchInput) {
+    fetch(`https://coach-finder.herokuapp.com/api/v1/parts/search?q=${searchInput}`)
+    .then(
+      function(response) {
+        if (response.status !== 200) {
+          console.log('Looks like there was a problem. Status Code: ' + response.status);
+          return;
+        }
+        response.json().then(function(data) {
+          renderResults(data, searchInput)
+        });
+        document.getElementById('searchinput').value = '';
       }
-      response.json().then(function(data) {
-        renderResults(data, searchInput)
-      });
-      document.getElementById('searchinput').value = '';
-    }
-  )
-  .catch(function(err) {
-    console.log('Fetch Error :-S', err);
-  });
+    )
+    .catch(function(err) {
+      console.log('Fetch Error :-S', err);
+    });
+  }
+  else {
+    const searchAgain = document.createElement('p');
+    searchAgain.textContent = "Enter a Name, Color, 0r Style to Search"
+    results.appendChild(searchAgain);
+  }
 }
 
 function renderResults(data, searchInput) {
