@@ -13,13 +13,16 @@ form {
 }
 input {
   min-width: 250px;
-  height: 28px;
+  height: 34px;
   vertical-align: top;
   border: 1px black solid;
   padding-top: 4px;
   padding-left: 4px;
 }
 button {
+  height: 34px;
+  color: #fff;
+  background-color: #000;
   border: 1px black solid;
 }
 input::placeholder, button {
@@ -34,6 +37,9 @@ li, p {
   vertical-align: top;
   list-style-type: none;
   font-family: 'Lato', sans-serif;
+}
+#loadmore {
+  visibility: hidden;
 }
 .screen-reader-only {
   position: absolute;
