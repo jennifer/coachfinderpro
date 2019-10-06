@@ -82,7 +82,7 @@ function renderResults(data) {
     const nameAndDate = document.createElement('p');
     const imageLink = document.createElement('a');
     const image = document.createElement('img');
-    nameAndDate.textContent = (`${data[index].catalog_name}`).replace('_', ' ') + " " +`${data[index].year}`;
+    nameAndDate.textContent = (`${data[index].catalog_name}`).replace(/_/g, ' ') + " " +`${data[index].year}`;
     image.src=(`${data[index].img_url}`).replace('http', 'https');
     results.appendChild(catalogPage);
     catalogPage.appendChild(nameAndDate);
