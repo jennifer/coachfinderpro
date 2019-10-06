@@ -10,22 +10,21 @@ body {
 }
 .top-row {
   min-width: 100%;
-  min-height: 250px;
   background-image: url("images/coachtags.png");
   background-position: top;
-  background-size: auto 100%;
   margin-bottom: 20px;
 }
-h1, h2 {
+h2 {
   font-family: 'EB Garamond', serif;
   font-weight: 800;
   margin-left: 20px;
+  margin-bottom: 0;
 }
 form {
-  margin-left: 20px;
+  margin: 0 20px;
 }
 input {
-  min-width: 250px;
+  min-width: 300px;
   height: 34px;
   vertical-align: top;
   border: 1px black solid;
@@ -55,6 +54,9 @@ li, p {
   list-style-type: none;
   font-family: 'Lato', sans-serif;
 }
+li p {
+  margin-top: 24px;
+}
 #loadmore {
   visibility: hidden;
   display: block;
@@ -71,10 +73,30 @@ li, p {
   overflow: hidden !important;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   .top-row {
-    min-height: 39.5vw;
-    background-size: 100% auto;
+    min-height: 41vw;
+    background-size: 105% auto;
+    background-repeat: no-repeat;
+  }
+  input {
+    min-width: 75%;
+    margin-top: 5px;
+  }
+  button {
+    margin-top: 5px;
+  }
+  li {
+    width: 100%;
+  }
+  img {
+    width: 95%;
+  }
+}
+@media (min-width: 480px) {
+  .top-row {
+    min-height: 41vw;
+    background-size: 105% auto;
     background-repeat: no-repeat;
   }
   input, button {
@@ -88,6 +110,11 @@ li, p {
   }
 }
 @media (min-width: 768px) {
+  .top-row {
+    min-height: 250px;
+    background-size: auto 100%;
+    background-repeat: repeat;
+  }
   li {
     display: inline-block;
     width: 50%;
