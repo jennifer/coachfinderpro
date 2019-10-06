@@ -84,6 +84,7 @@ li p {
     margin-top: 5px;
   }
   button {
+    min-width: 62px;
     margin-top: 5px;
   }
   li {
