@@ -9,6 +9,7 @@ body {
   background-size: 150px auto;
 }
 .top-row {
+  min-width: 100%;
   min-height: 250px;
   background-image: url("images/coachtags.png");
   background-position: top;
