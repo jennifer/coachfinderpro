@@ -1,4 +1,4 @@
-function getDataFromApi(event) {
+function getSearchInput(event) {
   event.preventDefault();
   const oldResults = document.getElementById("results");
   while (oldResults.firstChild) {
@@ -6,22 +6,7 @@ function getDataFromApi(event) {
   }
   let searchInput = document.getElementById('searchinput').value;
   if (searchInput) {
-    fetch(`https://coach-finder.herokuapp.com/api/v1/parts/search?q=${searchInput}`)
-    .then(
-      function(response) {
-        if (response.status !== 200) {
-          console.log('Looks like there was a problem. Status Code: ' + response.status);
-          return;
-        }
-        response.json().then(function(data) {
-          renderResultInfo(data, searchInput)
-        });
-        document.getElementById('searchinput').value = '';
-      }
-    )
-    .catch(function(err) {
-      console.log('Fetch Error :-S', err);
-    });
+    getDataFromApi("search?q=" + searchInput);
   }
   else {
     const searchAgain = document.createElement('p');
@@ -30,11 +15,31 @@ function getDataFromApi(event) {
   }
 }
 
+function getDataFromApi(searchInput) {
+  fetch(`https://coach-finder.herokuapp.com/api/v1/parts/${searchInput}`)
+  .then(
+    function(response) {
+      if (response.status !== 200) {
+        console.log('Looks like there was a problem. Status Code: ' + response.status);
+        return;
+      }
+      response.json().then(function(data) {
+        renderResultInfo(data, searchInput)
+      });
+      document.getElementById('searchinput').value = '';
+    }
+  )
+  .catch(function(err) {
+    console.log('Fetch Error :-S', err);
+  });
+}
+
 function renderResultInfo(data, searchInput) {
   if (data && data.length) {
+    const resultName = searchInput.replace('search?q=','');
     const resultInfo = document.getElementById('resultInfo');
-    resultInfo.textContent = `${data.length}` + ' results for ' + `${searchInput}` + ':';
-    if (data.length <= 9) {
+    resultInfo.textContent = `${data.length}` + ' results for ' + `${resultName}` + ':';
+    if (data.length <= 12) {
       renderResults(data);
     }
     else {renderSubArray(data)};
@@ -49,23 +54,23 @@ function renderResultInfo(data, searchInput) {
 let dataArr;
 let currentPage = 1;
 let startIndex = 0;
-let endIndex = 9;
+let endIndex = 12;
 function renderSubArray(data) {
   dataArr = data;
-  const pageCount = Math.ceil(dataArr.length / 9);
+  const pageCount = Math.ceil(dataArr.length / 12);
   const subArray = data.slice(startIndex, endIndex);
   renderResults(subArray);
   if (currentPage < pageCount) {
     document.getElementById("loadmore").style.visibility = "visible";
     currentPage ++;
-    startIndex += 9;
-    endIndex += 9;
+    startIndex += 12;
+    endIndex += 12;
   }
   else {
     document.getElementById("loadmore").style.visibility = "hidden";
     currentPage = 1;
     startIndex = 0;
-    endIndex = 9;
+    endIndex = 12;
   }
 }
 
@@ -83,3 +88,5 @@ function renderResults(data) {
     catalogPage.appendChild(image);
   }
 }
+
+getDataFromApi("rando");

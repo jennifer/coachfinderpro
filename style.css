@@ -5,8 +5,8 @@ html, body {
   padding: 0;
 }
 body {
-  background-image: url("images/transparency.jpg");
-  background-size: 150px auto;
+  background-image: url("images/papertexture.jpg");
+  background-size: fill;
 }
 .top-row {
   min-width: 100%;
