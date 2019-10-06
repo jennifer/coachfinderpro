@@ -71,6 +71,11 @@ li, p {
 }
 
 @media (max-width: 768px) {
+  .top-row {
+    min-height: 39.5vw;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+  }
   input, button {
     margin-top: 5px;
   }
