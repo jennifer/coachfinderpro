@@ -37,9 +37,11 @@ input {
 }
 button {
   height: 34px;
+  width: 65px;
   color: #fff;
   background-color: #000;
   border: 1px black solid;
+  padding: 0;
 }
 input, input::placeholder, button {
   font-family: 'EB Garamond', serif;
