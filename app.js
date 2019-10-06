@@ -1,9 +1,6 @@
 function getSearchInput(event) {
   event.preventDefault();
-  const oldResults = document.getElementById("results");
-  while (oldResults.firstChild) {
-    oldResults.removeChild(oldResults.firstChild);
-  }
+  clearData();
   let searchInput = document.getElementById('searchinput').value;
   if (searchInput) {
     getDataFromApi("search?q=" + searchInput);
@@ -24,7 +21,11 @@ function getDataFromApi(searchInput) {
         return;
       }
       response.json().then(function(data) {
-        renderResultInfo(data, searchInput)
+        if (searchInput !== "rando") {
+          renderResultInfo(data, searchInput)
+        }
+        else {renderResults(data)}
+        
       });
       document.getElementById('searchinput').value = '';
     }
@@ -87,6 +88,15 @@ function renderResults(data) {
     catalogPage.appendChild(nameAndDate);
     catalogPage.appendChild(image);
   }
+}
+
+function clearData() {
+  document.getElementById("resultInfo").textContent = '';
+  const oldResults = document.getElementById("results");
+  while (oldResults.firstChild) {
+    oldResults.removeChild(oldResults.firstChild);
+  }
+  document.getElementById("loadmore").style.visibility = "hidden";
 }
 
 getDataFromApi("rando");
