@@ -10,8 +10,11 @@ body {
 }
 .top-row {
   min-width: 100%;
+  min-height: 250px;
   background-image: url("images/coachtags.png");
   background-position: top;
+  background-size: auto 100%;
+  background-repeat: repeat;
   margin-bottom: 20px;
 }
 h2 {
@@ -73,34 +76,17 @@ li p {
   overflow: hidden !important;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .top-row {
     min-height: 41vw;
     background-size: 105% auto;
     background-repeat: no-repeat;
   }
   input {
-    min-width: 75%;
+    min-width: 250px;
     margin-top: 5px;
   }
   button {
-    max-width: 62px;
-    margin-top: 5px;
-  }
-  li {
-    width: 100%;
-  }
-  img {
-    width: 95%;
-  }
-}
-@media (min-width: 480px) {
-  .top-row {
-    min-height: 41vw;
-    background-size: 105% auto;
-    background-repeat: no-repeat;
-  }
-  input, button {
     margin-top: 5px;
   }
   li {
@@ -111,11 +97,6 @@ li p {
   }
 }
 @media (min-width: 768px) {
-  .top-row {
-    min-height: 250px;
-    background-size: auto 100%;
-    background-repeat: repeat;
-  }
   li {
     display: inline-block;
     width: 50%;
@@ -126,7 +107,6 @@ li p {
 }
 @media (min-width: 960px) {
   li {
-    display: inline-block;
     width: 33.3%;
   }
 }
