@@ -25,7 +25,6 @@ function getDataFromApi(searchInput) {
           renderResultInfo(data, searchInput)
         }
         else {renderResults(data)}
-        
       });
       document.getElementById('searchinput').value = '';
     }
@@ -81,12 +80,16 @@ function renderResults(data) {
     const results = document.getElementById('results');
     const catalogPage = document.createElement('li');
     const nameAndDate = document.createElement('p');
+    const imageLink = document.createElement('a');
     const image = document.createElement('img');
     nameAndDate.textContent = `${data[index].catalog_name}` + " " +`${data[index].year}`;
     image.src=`${data[index].img_url}`;
     results.appendChild(catalogPage);
     catalogPage.appendChild(nameAndDate);
-    catalogPage.appendChild(image);
+    catalogPage.appendChild(imageLink);
+    imageLink.setAttribute('href',`${data[index].img_url}`);
+    imageLink.setAttribute('target','_blank');
+    imageLink.appendChild(image);
   }
 }
 

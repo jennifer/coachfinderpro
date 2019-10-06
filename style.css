@@ -31,6 +31,7 @@ input {
   border: 1px black solid;
   padding-left: 4px;
   -webkit-appearance: none;
+  border-radius: 0;
 }
 button {
   height: 34px;
