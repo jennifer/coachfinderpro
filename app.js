@@ -15,12 +15,12 @@ function getSearchInput(event) {
 function getDataFromApi(searchInput) {
   fetch(`https://coach-finder.herokuapp.com/api/v1/parts/${searchInput}`)
   .then(
-    function(response) {
+    (response) => {
       if (response.status !== 200) {
         console.log('Looks like there was a problem. Status Code: ' + response.status);
         return;
       }
-      response.json().then(function(data) {
+      response.json().then((data) => {
         data.sort((a, b) => {
           return a.year - b.year;
         });
@@ -32,7 +32,7 @@ function getDataFromApi(searchInput) {
       document.getElementById('searchinput').value = '';
     }
   )
-  .catch(function(err) {
+  .catch((err) => {
     console.log('Fetch Error :-S', err);
   });
 }
