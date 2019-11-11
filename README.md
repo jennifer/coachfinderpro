@@ -4,12 +4,10 @@ An app enabling vintage Coach bag collectors and sellers to search for names, co
 
 ## Demo
 
-- [Live Demo](https://www.jenniferkerssen.com/coachfinderpro/)
-
-(Try searching Willis, Sage, or 9921)
+[Live Demo](https://www.jenniferkerssen.com/coachfinderpro/) (Try searching Willis, Sage, or 9921)
 
 ## Motivation
-* Scanned copies of past Coach catalogs are available online, but locating a specific style within those pages is a tedious manual task. My colleague converted those images to text, building a database and searchable API. This app is the interface that enables users to search the text on those pages, and return the corresponding catalog page images.
+Scanned copies of past Coach catalogs are available online, but locating a specific style within those pages is a tedious manual task. My colleague converted those images to text, building a database and searchable API. This app is the interface that enables users to search the text on those pages, and return the corresponding catalog page images.
 
 ## Requirements
 ### UX Requirements
@@ -32,7 +30,7 @@ An app enabling vintage Coach bag collectors and sellers to search for names, co
 * CSS
 * Custom API by Mary Burford
 
-## Desktop Screenshot
+## Screenshots
 
-![Desktop](images/coachfinderdesktop.png)
-![Mobile](images/coachfindermobile.png)
+<img src="images/coachfinderdesktop.png" alt="Desktop"/>
+<img src="images/coachfindermobile.png" alt="Mobile" width="320"/>
