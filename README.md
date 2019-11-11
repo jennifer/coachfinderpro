@@ -36,4 +36,4 @@ Desktop
 <img src="images/coachfinderdesktop.png" alt="Desktop"/>
 
 Mobile
-<img src="images/coachfindermobile.png" alt="Mobile" width="320"/>
+<br/><img src="images/coachfindermobile.png" alt="Mobile" width="320"/>
