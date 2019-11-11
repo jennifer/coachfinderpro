@@ -32,5 +32,8 @@ Scanned copies of past Coach catalogs are available online, but locating a speci
 
 ## Screenshots
 
+Desktop
 <img src="images/coachfinderdesktop.png" alt="Desktop"/>
+
+Mobile
 <img src="images/coachfindermobile.png" alt="Mobile" width="320"/>
